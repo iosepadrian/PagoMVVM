@@ -7,21 +7,26 @@ import androidx.security.crypto.MasterKeys
 import com.example.pagoappmvvm.network.ApiServiceProvider
 import com.example.pagoappmvvm.network.NetworkExceptionHandler
 import com.example.pagoappmvvm.network.RemoteServicesHandler
+import com.example.pagoappmvvm.repository.ContactRepository
 import com.example.pagoappmvvm.repository.SessionManager
+import com.example.pagoappmvvm.ui.contacts.ContactsViewModel
+import com.example.pagoappmvvm.usecase.GetContactsUseCase
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
-
+    viewModel { ContactsViewModel(get(), get()) }
 }
 
 val repositoryModule = module {
     single { provideSharedPreferences(androidContext()) }
     single { SessionManager(get()) }
+    single { ContactRepository(get(), get()) }
 }
 
 val utilsModule = module {
@@ -33,7 +38,7 @@ val utilsModule = module {
 }
 
 val useCaseModule = module {
-
+    single { GetContactsUseCase(get(), get()) }
 }
 
 fun provideSharedPreferences(context: Context): SharedPreferences {

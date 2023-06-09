@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text.Title1.Primary.Dark" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_title1</item>
+    </style>
+
+    <style name="Text.Body1.Primary.Gray" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/grey_letter</item>
+        <item name="android:textSize">@dimen/text_size_body1</item>
+    </style>
+
+    <style name="Text.Body2.Primary.Dark" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_body2</item>
+    </style>
+
+    <style name="Text.Body2.Primary.Light" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_body2</item>
+    </style>
+</resources>

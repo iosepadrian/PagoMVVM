@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_title1">24sp</dimen>
+    <dimen name="text_size_body1">13sp</dimen>
+    <dimen name="text_size_body2">17sp</dimen>
+
+    <dimen name="margin_s">12dp</dimen>
+    <dimen name="margin_s_m">16dp</dimen>
+    <dimen name="margin_m">24dp</dimen>
+    <dimen name="margin_xl">60dp</dimen>
+
+    <dimen name="profile_image_size">46dp</dimen>
+    <dimen name="profile_image_radius">23dp</dimen>
+</resources>
