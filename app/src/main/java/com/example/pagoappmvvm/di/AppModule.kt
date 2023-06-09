@@ -8,9 +8,12 @@ import com.example.pagoappmvvm.network.ApiServiceProvider
 import com.example.pagoappmvvm.network.NetworkExceptionHandler
 import com.example.pagoappmvvm.network.RemoteServicesHandler
 import com.example.pagoappmvvm.repository.ContactRepository
+import com.example.pagoappmvvm.repository.PostsRepository
 import com.example.pagoappmvvm.repository.SessionManager
+import com.example.pagoappmvvm.ui.contactdetails.ContactDetailsViewModel
 import com.example.pagoappmvvm.ui.contacts.ContactsViewModel
 import com.example.pagoappmvvm.usecase.GetContactsUseCase
+import com.example.pagoappmvvm.usecase.GetPostsUseCase
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -21,12 +24,14 @@ import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
     viewModel { ContactsViewModel(get(), get()) }
+    viewModel { ContactDetailsViewModel(get(), get()) }
 }
 
 val repositoryModule = module {
     single { provideSharedPreferences(androidContext()) }
     single { SessionManager(get()) }
     single { ContactRepository(get(), get()) }
+    single { PostsRepository(get(), get()) }
 }
 
 val utilsModule = module {
@@ -39,6 +44,7 @@ val utilsModule = module {
 
 val useCaseModule = module {
     single { GetContactsUseCase(get(), get()) }
+    single { GetPostsUseCase(get(), get()) }
 }
 
 fun provideSharedPreferences(context: Context): SharedPreferences {

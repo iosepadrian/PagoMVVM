@@ -9,5 +9,19 @@
         android:id="@+id/fragment_contacts"
         android:name="com.example.pagoappmvvm.ui.contacts.ContactsFragment"
         tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/action_fragment_contacts_to_fragment_contact_details"
+            app:destination="@id/fragment_contact_details" />
     </fragment>
+
+    <fragment
+        android:id="@+id/fragment_contact_details"
+        android:name="com.example.pagoappmvvm.ui.contactdetails.ContactDetailsFragment"
+        tools:layout="@layout/fragment_contact_details">
+
+        <argument
+            android:name="contactArgument"
+            app:argType="com.example.pagoappmvvm.model.Contact" />
+    </fragment>
+
 </navigation>

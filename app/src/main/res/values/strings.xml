@@ -4,9 +4,12 @@
     <string name="no_network_available">No network available</string>
     <string name="contacte">Contacte</string>
     <string name="contactele_mele">CONTACTELE MELE</string>
+    <string name="detalii_contact">Detalii contact</string>
 
     <string name="profile_image_content_description">Profile Image Content Description</string>
     <string name="forward_button_content_description">Forward Button Content Description</string>
+    <string name="back_button_content_description">Back Button Content Description</string>
 
     <string name="name_mock">Name</string>
+    <string name="email_mock">Email</string>
 </resources>
