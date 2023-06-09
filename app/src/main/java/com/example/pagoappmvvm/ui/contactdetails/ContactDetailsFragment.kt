@@ -49,6 +49,8 @@ class ContactDetailsFragment :
             if (list.isNotEmpty()) {
                 setUpFirstPost(list)
             }
+            //if we have at least one post we display the post layout
+            postLayout.isVisible = list.isNotEmpty()
         }
     }
 
